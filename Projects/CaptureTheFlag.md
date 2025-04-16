@@ -2,11 +2,10 @@
 
 ## Expert
 
-### Flag : 
+### Flag 13: 
 
-</br>
 ```shell
-
+dssd
 ```
 
 ## Advanced
@@ -23,32 +22,28 @@ password' OR '1'='1
 bcs92sjsk233
 ```
 
-### Flag : 
+### Flag 15: 
 
-</br>
 ```shell
-
+jj
 ```
 
-### Flag : 
+### Flag 12: 
 
-</br>
 ```shell
-
+jj
 ```
 
-### Flag : 
+### Flag 4: 
 
-</br>
 ```shell
-
+jj
 ```
 
-Flag : 
+### Flag 14: 
 
-</br>
 ```shell
-
+jj
 ```
 
 ## Intermediate
@@ -69,6 +64,12 @@ ld8skd62hdd
 192.168.14.35 | cat vendors.txt
 
 opshdkasy78s
+```
+
+### Flag 2: 
+
+```shell
+dd
 ```
 
 ## Easy
