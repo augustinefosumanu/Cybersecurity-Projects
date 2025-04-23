@@ -28,8 +28,12 @@ bcs92sjsk233
 
 ### Flag 15: 
 
+![image](https://github.com/user-attachments/assets/6e3eb3e4-c97f-4dba-aba2-ebbcc436c4a5)
+</br>
 ```shell
-jj
+192.168.14.35/disclaimer.php?page=old_disclaimers/disclaimer_1.txt
+
+dksdf7sjd5sg
 ```
 
 ### Flag 12: 
@@ -37,6 +41,10 @@ jj
 ![image](https://github.com/user-attachments/assets/207457c0-ed4f-4ba1-b59c-608f5d0f7c22)
 </br>
 ```shell
+username: melina
+
+password: melina
+
 hsk23oncsd
 ```
 
@@ -53,9 +61,10 @@ nckd97dk6sh2
 ![image](https://github.com/user-attachments/assets/dd799d73-3210-47c3-9dbb-42d7d5979051)
 ![image](https://github.com/user-attachments/assets/cb850488-67ec-4fb2-9246-00cc30ebc0ff)
 ![image](https://github.com/user-attachments/assets/f542f248-60f7-4c37-ad32-5f39f429cc29)
-
+![image](https://github.com/user-attachments/assets/5857bf1e-874a-40de-b3bc-f81fe51a0480)
+</br>
 ```shell
-jj
+dks93jdlsd7dj
 ```
 
 ## Intermediate
