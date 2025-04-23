@@ -50,6 +50,10 @@ nckd97dk6sh2
 
 ### Flag 14: 
 
+![image](https://github.com/user-attachments/assets/dd799d73-3210-47c3-9dbb-42d7d5979051)
+![image](https://github.com/user-attachments/assets/cb850488-67ec-4fb2-9246-00cc30ebc0ff)
+![image](https://github.com/user-attachments/assets/f542f248-60f7-4c37-ad32-5f39f429cc29)
+
 ```shell
 jj
 ```
