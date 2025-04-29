@@ -12,6 +12,18 @@ The Linux servers hosted by Rekall were critically vulnerable. Through both basi
 
 Rekall’s Windows servers also exhibited serious security gaps. Leveraging Metasploit, I accessed the system and escalated privileges after acquiring user hashes. These were cracked using John the Ripper, enabling lateral movement across the network and highlighting the risks of poor password hygiene and inadequate system hardening.
 
+# Technical Skills
+
+✅ Penetration Testing (Web Applications & Servers)</br>
+✅ Vulnerability Assessment & Exploitation</br>
+✅ Command Injection & SQL Injection Attacks</br>
+✅ Cross-Site Scripting (XSS)</br>
+✅ Brute Force Attack Techniques</br>
+✅ Metasploit Framework</br>
+✅ Nmap Scanning & Network Enumeration</br>
+✅ Password Cracking (John the Ripper)</br>
+✅ Windows and Linux Server Security & Privilege Escalation</br>
+
 # Web Application
 
 ## Expert
