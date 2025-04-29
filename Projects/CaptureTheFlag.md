@@ -1,3 +1,17 @@
+# Overview
+
+**Security Assessment of Rekall Infrastructure**
+
+Through a Capture the Flag project, I performed a thorough security assessment of Rekall’s web and server infrastructure, uncovering and exploiting critical vulnerabilities in web, Linux, and Windows systems. I exposed flaws in input validation, credential management, and service configurations, gaining unauthorized access and escalating privileges to emulate real-world cyberattacks.
+
+**Summary**
+
+Rekall’s web application contained multiple security flaws, including command injection, SQL injection, local file inclusion, and cross-site scripting. I tested these vulnerabilities by executing controlled injection attacks on the homepage, revealing that existing input validation measures could be bypassed. Weak credentials and exposed login details in the source code further allowed brute-force and SQL injection techniques to gain unauthorized access, including administrator privileges.
+
+The Linux servers hosted by Rekall were critically vulnerable. Through both basic and aggressive Nmap scans, I identified open ports and exploited weakly secured services. Using Metasploit, I successfully gained access to the system, navigated the network laterally, and escalated privileges to simulate a full breach scenario.
+
+Rekall’s Windows servers also exhibited serious security gaps. Leveraging Metasploit, I accessed the system and escalated privileges after acquiring user hashes. These were cracked using John the Ripper, enabling lateral movement across the network and highlighting the risks of poor password hygiene and inadequate system hardening.
+
 # Web Application
 
 ## Expert
