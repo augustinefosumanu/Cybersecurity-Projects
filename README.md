@@ -6,7 +6,7 @@
 [Projects](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/tree/main/Projects)
   - [Linux Hardening & Automation](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/LinuxHardening%26AutomationProject.md)
     - **Summary**
-      - I implemented Linux security hardening measures, reducing potential attack surface by 30% by configuring password policies for 5+ user accounts and restricting unnecessary services. </br>
+      - I implemented Linux security hardening measures, **reducing potential attack surface by 30%** by configuring password policies for **5+ user accounts** and restricting unnecessary services. </br>
       - I automated system backup and restoration procedures using Cron jobs, **decreasing recovery time by 50%** and ensuring data integrity for critical system files. </br>
       - I enhanced user access management by implementing role-based access control (RBAC) and reducing the number if users with sudo privileges, minimizing the risk of insider threats. </br>
   
