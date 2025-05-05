@@ -16,3 +16,7 @@
       - I identified and exploited **7+ vulnerabilities** including **SQL Injection**, **Cross-Site Scripting (XSS)**, and **Command Injection** in a web application environment demonstrating the ability to reduce potential attack vectors. </br>
       - I successfully penetrated and gained **root access** to **1 simulated Linux server** and **2 computers on a Windows Server**, highlighting skills in identifying critical vulnerabilities and **assessing the potential impact of privilege escalation attacks**. </br>
   - [Security Operations Center (SOC) Analyst Simulation](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/SOCAnalystSimulation.md)
+    - **Summary**
+      - I deployed and configured **Splunk** to ingest, analyze, and correlate logs from **Windows and Apache servers**, enabling real-time detection of cyber threats. </br>  
+      - I designed **interactive dashboards** and **custom alerts** to monitor suspicious activity, supporting early identification of a **simulated cyberattack** by an external adversary. </br>
+      - I conducted **forensic log analysis** and delivered a **comprehensive security report** and **executive-level presentation** outlining attack vectors and mitigation strategies. </br>
