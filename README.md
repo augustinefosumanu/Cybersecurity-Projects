@@ -15,4 +15,4 @@
       - I participated in a CTF competition amongst my class **ranking in the top 5% of students** with the most solved problems exploiting over **15 web application and server vulnerabilities** and capturing the flags within a time-constrained environment. </br>  
       - I identified and exploited **7+ vulnerabilities** including **SQL Injection**, **Cross-Site Scripting (XSS)**, and **Command Injection** in a web application environment demonstrating the ability to reduce potential attack vectors. </br>
       - I successfully penetrated and gained **root access** to **1 simulated Linux server** and **2 computers on a Windows Server**, highlighting skills in identifying critical vulnerabilities and **assessing the potential impact of privilege escalation attacks**. </br>
-     
+  - [Security Operations Center (SOC) Analyst Simulation](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/)
