@@ -166,7 +166,7 @@ To help VSI quickly understand the distribution of different Windows event signa
 ```shell
 source="windows_server_logs.csv" | stats count by signature
 ```
-![image](https://github.com/user-attachments/assets/fb7844a3-e578-4af4-bc08-1295db394efe)
+![image](https://github.com/user-attachments/assets/b5c5efb8-53b3-4c82-8ed1-e740e2f9912c)
 </br>
 
 #### User Fields Over Time
@@ -319,3 +319,214 @@ source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" 
 ```
 ![image](https://github.com/user-attachments/assets/c592bc6d-3adc-49a6-a220-4292b32d2d60)
 </br>
+
+# Testing 
+
+I reviewed previous report, alert, and dashboard queries using different logs to identify potential changes or fine-tuning needed to accurately capture the relevant data. </br>
+
+## Windows Attack Logs
+
+#### Report Analysis for Severity
+
+
+```shell
+source="windows_server_logs.csv" | stats count by severity | eventstats sum(count) as total | eval percentage=round((count/total)*100,2) | table severity, count, percentage
+
+source="windows_server_attack_logs.csv" | stats count by severity | eventstats sum(count) as total | eval percentage=round((count/total)*100,2) | table severity, count, percentage
+```
+![image](https://github.com/user-attachments/assets/9435b9fd-96d1-4eef-8fdb-dd8497e2e699)
+![image](https://github.com/user-attachments/assets/3cd25d9e-e448-49c9-b1b0-eff93c5c0e20)
+</br>
+
+#### Report Analysis for Failed Activities
+
+
+```shell
+source="windows_server_logs.csv" |stats count by status | eventstats sum(count) as total | eval percentage=round((count/total)*100,2) | table status, count, percentage
+
+source="windows_server_attack_logs.csv" |stats count by status | eventstats sum(count) as total | eval percentage=round((count/total)*100,2) | table status, count, percentage
+```
+![image](https://github.com/user-attachments/assets/0f6f26ee-4969-4479-8c8c-534eb7247870)
+![image](https://github.com/user-attachments/assets/92eb3e34-f536-40f4-bf10-5e62aeefaf29)
+</br>
+
+
+#### Alert Analysis for Failed Windows Activity
+
+
+```shell
+source="windows_server_logs.csv" status="failure" | bin _time span=1h | stats count as failure_count by _time | where failure_count > 10
+
+source="windows_server_attack_logs.csv" status="failure" | bin _time span=1h | stats count as failure_count by _time | where failure_count > 10
+```
+![image](https://github.com/user-attachments/assets/368facca-1cfe-4570-8997-04077311aad5)
+![image](https://github.com/user-attachments/assets/7dd7bc3e-2ea5-4a41-b1ce-2eff6689fa1c)
+</br>
+
+#### Alert Analysis for Successful Logins
+
+
+```shell
+source="windows_server_logs.csv" signature_id=4624 | bin _time span=1h | stats count as successful_login by _time | where successful_login > 21
+
+source="windows_server_attack_logs.csv" signature_id=4624 | bin _time span=1h | stats count as successful_login by _time | where successful_login > 15
+```
+![image](https://github.com/user-attachments/assets/a418be17-f361-4984-91f1-18fbc6167a67)
+![image](https://github.com/user-attachments/assets/6c6fe6fd-f00d-405a-8e64-d3fc04df5d99)
+</br>
+
+#### Alert Analysis for Deleted Accounts
+
+
+```shell
+source="windows_server_logs.csv" signature_id="4726" | bin _time span=1h | stats count as account_deletion_per_hour by _time | where account_deletion_per_hour > 22
+
+source="windows_server_attack_logs.csv" signature_id="4726" | bin _time span=1h | stats count as account_deletion_per_hour by _time | where account_deletion_per_hour > 22
+
+source="windows_server_attack_logs.csv" signature_id="4726" | bin _time span=1h | stats count as account_deletion_per_hour by _time | where account_deletion_per_hour > 10
+```
+![image](https://github.com/user-attachments/assets/92d24eaa-4c6f-4ba2-993e-67f91794b321)
+![image](https://github.com/user-attachments/assets/29c515bf-d239-4a45-85e4-102bc5af428f)
+</br>
+
+
+#### Dashboard Analysis for Time Chart of Signatures
+
+
+```shell
+source="windows_server_logs.csv" | timechart span=1h count by signature
+
+source="windows_server_attack_logs.csv" | timechart span=1h count by signature
+```
+![image](https://github.com/user-attachments/assets/5620f4e8-b235-47b8-91ac-5307d667d708)
+</br>
+
+#### Dashboard Analysis for Users
+
+
+```shell
+source="windows_server_logs.csv" | timechart span=1h count by user
+
+source="windows_server_attack_logs.csv" | timechart span=1h count by user
+```
+![image](https://github.com/user-attachments/assets/cc83441d-d252-4835-87d0-56b767dba3ed)
+</br>
+
+#### Dashboard Analysis for Signatures with Bar Chart
+
+```shell
+source="windows_server_logs.csv" | stats count by signature
+
+source="windows_server_attack_logs.csv" | stats count by signature
+```
+![image](https://github.com/user-attachments/assets/b85aeea9-93d3-4da5-93ec-0059e22ec92d)
+</br>
+
+#### Dashboard Analysis for Users with Pie Chart     
+
+
+```shell
+source="windows_server_logs.csv" | stats count by user
+
+source="windows_server_attack_logs.csv" | stats count by user
+```
+![image](https://github.com/user-attachments/assets/ed851ad4-7d4f-4103-9b7d-24c89319a774)
+</br>
+
+### Apache Attack Logs
+
+#### Report Analysis for Methods
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" |stats count by method |sort - count
+
+source="apache_attack_logs.txt" host="apache_server_logs" sourcetype="access_combined" |stats count by method |sort - count
+```
+![image](https://github.com/user-attachments/assets/9436551a-95f6-4aa8-b6c9-550dfec03c0b)
+![image](https://github.com/user-attachments/assets/69e7d05c-1e03-4d73-ba9c-d70df6804566)
+</br>
+
+#### Report Analysis for Referrer Domains
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined"| top limit=10 referer_domain
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined"| top limit=10 referer_domain
+```
+![image](https://github.com/user-attachments/assets/6ec4e4bc-f64f-4943-ba5b-11087be45364)
+![image](https://github.com/user-attachments/assets/653c26a4-c6bb-4430-9168-a5647254dfe2)
+</br>
+
+#### Report Analysis for HTTP Response Codes
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" | stats count by status | sort - count
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined" | stats count by status | sort - count
+```
+![image](https://github.com/user-attachments/assets/ae148d3c-defe-4b54-956a-e9c3218ed56a)
+![image](https://github.com/user-attachments/assets/e02177ab-fc24-43e0-8b10-3c1ea2bdb522)
+</br>
+
+#### Alert Analysis for International Activity
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" | iplocation clientip | where Country!="United States" | bin _time span=1h |stats count as foreign_events by _time | where foreign_events > 240
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined" | iplocation clientip | where Country!="United States" | bin _time span=1h |stats count as foreign_events by _time | where foreign_events > 240
+```
+![image](https://github.com/user-attachments/assets/cb0eefb1-690e-48ad-83e2-0f2d49396940)
+![image](https://github.com/user-attachments/assets/041db1a8-5cca-407c-bbaf-31e06cc70388)
+</br>
+
+#### Alert Analysis for HTTP POST Activity
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" method="POST" | bin _time span=1h | stats count as http_post_method | where http_post_method > 14
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined" method="POST" | bin _time span=1h | stats count as http_post_method | where http_post_method > 14
+```
+![image](https://github.com/user-attachments/assets/586c4b33-0380-457c-84a2-742869e2f70f)
+![image](https://github.com/user-attachments/assets/25bc8aa5-f6dc-460e-b438-8df34d471968)
+</br>
+
+
+#### Dashboard Analysis for Time Chart of HTTP Methods
+
+
+```shell
+source="apache_logs.txt"  host="apache_server_logs" sourcetype="access_combined" | timechart span=1h count by method
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined" | timechart span=1h count by method
+```
+![image](https://github.com/user-attachments/assets/4679baf7-893d-4746-82a7-0881532f9d41)
+</br>
+
+#### Dashboard Analysis for Cluster Map
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" | iplocation clientip| geostats latfield=lat longfield=lon count by Country
+
+source="apache_attack_logs.txt" host="apache_server_logs" sourcetype="access_combined" | iplocation clientip| geostats latfield=lat longfield=lon count by Country
+```
+![image](https://github.com/user-attachments/assets/fc328128-b8f6-4cd0-9448-cb3d69507fdb)
+</br>
+
+
+#### Dashboard Analysis for URI Data
+
+
+```shell
+source="apache_logs.txt" host="apache_server_logs" sourcetype="access_combined" | stats count by uri_path | sort - count
+
+source="apache_attack_logs.txt"  host="apache_server_logs" sourcetype="access_combined" | stats count by uri_path | sort - count
+```
+![image](https://github.com/user-attachments/assets/5cc16f5d-5f2b-441d-ba9c-71df003bfecb)
+</br>
+
