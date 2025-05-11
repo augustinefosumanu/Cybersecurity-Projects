@@ -17,7 +17,7 @@
       - I enhanced user access management by implementing role-based access control (RBAC) and reducing the number if users with sudo privileges, minimizing the risk of insider threats. </br>
 
     
-  - [Ethical Keylogger Project](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/)
+  - [Ethical Keylogger Project](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/EthicalKeylogger.md)
     - **Summary**
       - Developed a keylogging tool using the pynput library to capture keystrokes, handling both alphanumeric characters and special keys (e.g., Space, Enter, Shift, Control) for robust event tracking. </br>
       - Implemented error handling for key presses that don't have a char attribute, ensuring seamless logging of special keys and control sequences to a text file (key_log.txt). </br>
