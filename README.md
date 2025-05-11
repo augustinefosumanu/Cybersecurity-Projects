@@ -20,3 +20,8 @@
       - I deployed and configured **Splunk** to ingest, analyze, and correlate logs from **Windows and Apache servers**, enabling real-time detection of cyber threats. </br>  
       - I designed **interactive dashboards** and **custom alerts** to monitor suspicious activity, supporting early identification of a **simulated cyberattack** by an external adversary. </br>
       - I conducted **forensic log analysis** and delivered a **comprehensive security report** and **executive-level presentation** outlining attack vectors and mitigation strategies. </br>
+  - [Ethical Keylogger Project](https://github.com/augustinefosumanu/UT-Austin-Bootcamp-Hands-On-Projects/blob/main/Projects/)
+    - **Summary**
+      - Developed a keylogging tool using the pynput library to capture keystrokes, handling both alphanumeric characters and special keys (e.g., Space, Enter, Shift, Control) for robust event tracking. </br>
+      - Implemented error handling for key presses that don't have a char attribute, ensuring seamless logging of special keys and control sequences to a text file (key_log.txt). </br>
+      - Created a persistent keylogger listener that runs in the background and continuously monitors and logs keyboard inputs, allowing for real-time capture of user activity. </br>
