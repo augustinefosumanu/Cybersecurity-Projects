@@ -61,3 +61,7 @@ with keyboard.Listener(on_press=on_press) as listener:
     print("Keylogger is running... Press Ctrl+C to stop.")
     listener.join()
 ```
+
+#### Video Walkthrough
+
+https://youtu.be/agXRtUbqxds
